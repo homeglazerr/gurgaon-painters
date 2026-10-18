@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const slides = [
   {
@@ -14,8 +15,8 @@ const slides = [
   {
     title: "Premium Interior Painting in Gurgaon",
     text: "High-quality interior painting services with flawless finishes, premium colors, and expert craftsmanship for homes and apartments.",
-    image: "/images/hero-image-one.webp",
-    imageAlt: "Painter applying a smooth finish to an interior wall",
+    image: "/images/sons-bedroom.webp",
+    imageAlt: "Bedroom interior with wooden furniture and green accents",
     badge: "Interior Painting",
   },
 ];
@@ -77,9 +78,15 @@ export default function Hero() {
                       {slide.badge}
                     </span>
 
-                    <h1 className="mb-4 text-[clamp(2.4rem,5.5vw,5rem)] font-black leading-[0.94] tracking-[-0.06em] text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.25)] md:mb-5">
-                      {slide.title}
-                    </h1>
+                    {index === 0 ? (
+                      <h1 className="mb-4 text-[clamp(2.4rem,5.5vw,5rem)] font-black leading-[0.94] tracking-[-0.06em] text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.25)] md:mb-5">
+                        {slide.title}
+                      </h1>
+                    ) : (
+                      <h2 className="mb-4 text-[clamp(2.4rem,5.5vw,5rem)] font-black leading-[0.94] tracking-[-0.06em] text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.25)] md:mb-5">
+                        {slide.title}
+                      </h2>
+                    )}
 
                     <p className="mx-auto max-w-[30rem] text-sm leading-6 text-white/85 sm:text-[0.95rem] md:max-w-[34rem] md:text-[1.05rem] md:leading-7">
                       {slide.text}
@@ -92,12 +99,12 @@ export default function Hero() {
                       >
                         Get Free Quote
                       </a>
-                      <a
-                        href="#services"
+                      <Link
+                        href="/services"
                         className="inline-flex items-center justify-center rounded-full border border-white/35 bg-white/10 px-7 py-3 text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/20 md:px-8 md:py-3.5 md:text-[0.85rem]"
                       >
                         Our Services
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

@@ -1,13 +1,24 @@
 import Features from "./components/Features";
+import FAQSection from "./components/FAQSection";
 import Contact from "./components/Contact";
+import Certificates from "./components/Certificates";
+import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
+import HowWeDoIt from "./components/HowWeDoIt";
 import Navbar from "./components/navbar";
+import Reviews from "./components/Reviews";
 import Services from "./components/Services";
+import VisualizeRoomColor from "./components/VisualizeRoomColor";
 import { getSiteUrl } from "./site-url";
 
+const siteUrl = getSiteUrl();
+
+export const metadata = {
+  ...(siteUrl ? { alternates: { canonical: siteUrl } } : {}),
+};
+
 export default function Home() {
-  const siteUrl = getSiteUrl();
   const services = [
     "Interior Painting",
     "Exterior Painting",
@@ -22,6 +33,7 @@ export default function Home() {
       {
         "@type": "WebSite",
         name: "Gurgaon Painters",
+        description: "Interior and exterior painting, wall textures, waterproofing, and wood and metal finishes for homes and businesses in Gurgaon and Gurugram.",
         ...(siteUrl
           ? { url: siteUrl }
           : {}),
@@ -47,6 +59,7 @@ export default function Home() {
         "@type": "Service",
         name,
         serviceType: name,
+        description: `${name} for residential and commercial properties in Gurgaon and Gurugram. Scope and recommendations are confirmed after discussing the site and surfaces.`,
         areaServed: [
           { "@type": "City", name: "Gurgaon" },
           { "@type": "City", name: "Gurugram" },
@@ -61,7 +74,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#f6f6f4]">
+    <main className="relative min-h-screen bg-[#f6f6f4]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -72,6 +85,12 @@ export default function Home() {
       <Hero />
       <Services />
       <Features />
+      <HowWeDoIt />
+      <VisualizeRoomColor />
+      <Certificates />
+      <Reviews />
+      <BlogSection />
+      <FAQSection />
       <Contact />
       <Footer />
     </main>

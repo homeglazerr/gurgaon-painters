@@ -1,18 +1,14 @@
-import { Phone, MapPin, Mail } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
+import Link from "next/link";
+import { services } from "../services/services";
 
 const footerLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#features" },
-  { label: "Contact", href: "#contact" },
-];
-
-const services = [
-  "Interior Painting",
-  "Exterior Painting",
-  "Wall Textures",
-  "Waterproofing",
-  "Wood & Metal Finishes",
-  "Commercial Painting",
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Why Us", href: "/why-us" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
+  { label: "Cookie policy", href: "/cookies" },
 ];
 
 async function getCurrentYear() {
@@ -26,11 +22,11 @@ export default async function Footer() {
   return (
     <footer className="bg-[#1a1612] text-white">
       {/* Main footer content */}
-      <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
+      <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Brand column */}
           <div>
-            <a
+            <Link
               href="/"
               className="mb-5 inline-flex items-center gap-2.5 text-white"
               aria-label="Gurgaon Painters - Home"
@@ -55,13 +51,13 @@ export default async function Footer() {
               <span className="text-sm font-black tracking-[0.07em]">
                 GURGAON PAINTERS
               </span>
-            </a>
+            </Link>
             <p className="mb-1 text-xs font-semibold uppercase tracking-[0.12em] text-white/40">
               by Home Glazer
             </p>
             <p className="mt-4 max-w-xs text-sm leading-6 text-white/55">
-              Professional painting services across Gurgaon and Gurugram — from
-              single rooms to full property repaints.
+              Professional painting services across Gurgaon and Gurugram for
+              every room, home, and workspace.
             </p>
 
             {/* Contact info */}
@@ -87,13 +83,13 @@ export default async function Footer() {
             </h3>
             <ul className="space-y-3">
               {services.map((service) => (
-                <li key={service}>
-                  <a
-                    href="#services"
+                <li key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
                     className="text-sm text-white/65 transition-colors hover:text-white"
                   >
-                    {service}
-                  </a>
+                    {service.shortTitle}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -107,12 +103,12 @@ export default async function Footer() {
             <ul className="space-y-3">
               {footerLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-white/65 transition-colors hover:text-white"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -127,30 +123,33 @@ export default async function Footer() {
               Ready to refresh your space? Get in touch for a free site visit
               and no-obligation quote.
             </p>
-            <a
-              href="tel:+919717256514"
-              className="inline-flex items-center justify-center rounded-full bg-[#c2410c] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-white transition-all duration-200 hover:bg-[#9a3412] hover:-translate-y-px"
-            >
-              Call Us Now
-            </a>
-            <a
-              href="#contact"
-              className="ml-3 inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-white/70 transition-all duration-200 hover:border-white/40 hover:text-white"
-            >
-              Send Enquiry
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="tel:+919717256514"
+                className="inline-flex items-center justify-center rounded-full bg-[#c2410c] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-white transition-all duration-200 hover:bg-[#9a3412] hover:-translate-y-px"
+              >
+                Call Us Now
+              </a>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-white/70 transition-all duration-200 hover:border-white/40 hover:text-white"
+              >
+                Send Enquiry
+              </Link>
+            </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="mt-12 border-t border-white/10 pt-6 sm:flex sm:items-center sm:justify-between">
+        <div className="mt-8 border-t border-white/10 pt-5 sm:flex sm:items-center sm:justify-between">
           <p className="text-xs text-white/35">
             &copy; {currentYear} Gurgaon Painters by Home Glazer. All rights
             reserved.
           </p>
-          <p className="mt-3 text-xs text-white/25 sm:mt-0">
-            Serving Gurgaon &amp; Gurugram, Haryana
-          </p>
+          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/35 sm:mt-0">
+            <p>Serving Gurgaon &amp; Gurugram, Haryana</p>
+            <Link href="/sitemap.xml" className="underline decoration-white/25 underline-offset-4 transition-colors hover:text-white">Sitemap</Link>
+          </div>
         </div>
       </div>
     </footer>

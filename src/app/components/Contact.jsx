@@ -33,9 +33,9 @@ export default function Contact() {
     "mt-2 w-full rounded-md border border-[#dedbd4] bg-white px-4 py-3 text-sm text-[#29251f] outline-none transition focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20";
 
   return (
-    <section id="contact" className="bg-[#ffff] px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-        <div>
+    <section id="contact" className="bg-[#ffff] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+        <div className="text-left">
           <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#29251f]">
             <span className="h-px w-8 bg-[#c2410c]" />
             Get in touch
@@ -122,7 +122,7 @@ export default function Contact() {
           >
             Send enquiry on WhatsApp <ArrowUpRight size={17} aria-hidden="true" />
           </button>
-          <p className="mt-3 text-xs leading-5 text-[#817a6e]">
+          <p className="mt-3 text-center text-xs leading-5 text-[#817a6e]">
             WhatsApp will open with your enquiry ready to send. Please review it before sending.
           </p>
         </form>

@@ -1,17 +1,21 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
+import { services } from "../services/services";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#features" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "Why Us", href: "/why-us" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
@@ -20,7 +24,7 @@ export default function Navbar() {
         className="relative mx-auto flex max-w-7xl items-center justify-between gap-2 rounded-full border border-slate-200 bg-white/95 px-3 py-2 shadow-[0_10px_30px_rgba(15,23,42,0.12)] backdrop-blur-md sm:gap-4 sm:px-5 sm:py-2.5 lg:px-7"
       >
         {/* Logo */}
-        <a
+        <Link
           href="/"
           className="flex min-w-0 items-center gap-2 px-1 py-2 text-[#0B1F4D] sm:gap-3 sm:px-2"
           aria-label="Gurgaon Painters - Home"
@@ -28,18 +32,42 @@ export default function Navbar() {
           <span className="whitespace-nowrap text-[0.68rem] font-black tracking-[0.055em] sm:text-sm sm:tracking-[0.08em] lg:text-base">
             GURGAON PAINTERS
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav links */}
         <div className="hidden items-center gap-5 text-sm font-semibold text-[#0B1F4D] lg:flex xl:gap-8">
+          <div className="group relative">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-1 py-1 transition-colors hover:text-[#c2410c] focus-visible:text-[#c2410c]"
+            >
+              Services <ChevronDown size={15} aria-hidden="true" />
+            </Link>
+            <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div className="rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_16px_40px_rgba(15,23,42,0.16)]">
+                {services.map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    className="block rounded-xl px-4 py-3 text-sm font-medium text-[#29251f] transition-colors hover:bg-[#f9f9f7] hover:text-[#c2410c]"
+                  >
+                    {service.shortTitle}
+                  </Link>
+                ))}
+                <Link href="/services" className="mt-1 block border-t border-slate-100 px-4 py-3 text-xs font-bold uppercase tracking-wide text-[#c2410c] hover:text-[#9a3412]">
+                  All services →
+                </Link>
+              </div>
+            </div>
+          </div>
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
               href={item.href}
               className="relative py-1 transition-colors hover:text-[#c2410c] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#c2410c] after:transition-all after:duration-300 hover:after:w-full"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -72,15 +100,52 @@ export default function Navbar() {
             style={{ animation: "menuSlideDown 0.22s ease-out" }}
           >
             <div className="flex flex-col">
+              <div>
+                <div className="flex min-h-12 items-center rounded-xl transition-colors hover:bg-slate-50">
+                  <Link
+                    href="/services"
+                    className="flex min-h-12 flex-1 items-center rounded-xl px-4 text-base font-medium text-[#0B1F4D] hover:text-[#c2410c]"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Services
+                  </Link>
+                  <button
+                    type="button"
+                    aria-label={isServicesOpen ? "Hide service links" : "Show service links"}
+                    aria-expanded={isServicesOpen}
+                    className="mr-2 flex h-9 w-9 items-center justify-center rounded-full text-[#0B1F4D] hover:bg-white hover:text-[#c2410c]"
+                    onClick={() => setIsServicesOpen((open) => !open)}
+                  >
+                    <ChevronDown size={18} className={`transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
+                  </button>
+                </div>
+                {isServicesOpen && (
+                  <div className="ml-4 border-l border-[#c2410c]/20 pl-2">
+                    {services.map((service) => (
+                      <Link
+                        key={service.slug}
+                        href={`/services/${service.slug}`}
+                        className="flex min-h-11 items-center rounded-lg px-4 text-sm text-[#514b41] transition-colors hover:bg-slate-50 hover:text-[#c2410c]"
+                        onClick={() => {
+                          setIsOpen(false);
+                          setIsServicesOpen(false);
+                        }}
+                      >
+                        {service.shortTitle}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className="flex min-h-12 items-center rounded-xl px-4 text-base font-medium text-[#0B1F4D] transition-colors hover:bg-slate-50 hover:text-[#c2410c]"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
             <a
