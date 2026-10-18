@@ -15,8 +15,13 @@ const services = [
   "Commercial Painting",
 ];
 
-export default function Footer() {
-  const currentYear = new Date().getFullYear();
+async function getCurrentYear() {
+  "use cache";
+  return new Date().getFullYear();
+}
+
+export default async function Footer() {
+  const currentYear = await getCurrentYear();
 
   return (
     <footer className="bg-[#1a1612] text-white">
