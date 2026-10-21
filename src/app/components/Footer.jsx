@@ -1,4 +1,5 @@
 import { Phone, MapPin } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { services } from "../services/services";
 
@@ -31,26 +32,13 @@ export default async function Footer() {
               className="mb-5 inline-flex items-center gap-2.5 text-white"
               aria-label="Gurgaon Painters - Home"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#c2410c]">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M7 20.5c0 0 2-1 5-1s5 1 5 1M12 3v1m0 0C9 4 7 7 7 10c0 2 .8 3.5 2 4.5V17h6v-2.5c1.2-1 2-2.5 2-4.5 0-3-2-6-5-6z"
-                    stroke="white"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-              <span className="text-sm font-black tracking-[0.07em]">
-                GURGAON PAINTERS
-              </span>
+              <Image
+                src="/gurgaon-painters-logo-transparent.png"
+                alt="Gurgaon Painters"
+                width={1215}
+                height={433}
+                className="h-12 w-36 object-contain object-left sm:h-14 sm:w-44"
+              />
             </Link>
             <p className="mb-1 text-xs font-semibold uppercase tracking-[0.12em] text-white/40">
               by Home Glazer
@@ -148,6 +136,7 @@ export default async function Footer() {
           </p>
           <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/35 sm:mt-0">
             <p>Serving Gurgaon &amp; Gurugram, Haryana</p>
+            <Link href="/privacy-policy" className="underline decoration-white/25 underline-offset-4 transition-colors hover:text-white">Privacy Policy</Link>
             <Link href="/sitemap.xml" className="underline decoration-white/25 underline-offset-4 transition-colors hover:text-white">Sitemap</Link>
           </div>
         </div>

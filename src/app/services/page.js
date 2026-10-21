@@ -15,7 +15,12 @@ export const metadata = createSeoMetadata({
   title: "Painting Services in Gurgaon | Home Glazer",
   description: "Explore interior and exterior painting, wall textures, waterproofing, wood and metal finishes, and commercial painting in Gurgaon.",
   ...(siteUrl ? { alternates: { canonical: `${siteUrl}/services` } } : {}),
-  openGraph: { url: siteUrl ? `${siteUrl}/services` : undefined, type: "website" },
+  openGraph: {
+    url: siteUrl ? `${siteUrl}/services` : undefined,
+    type: "website",
+    images: ["/images/service-interior.webp"],
+  },
+  twitter: { card: "summary_large_image", images: ["/images/service-interior.webp"] },
 });
 
 export default function ServicesPage() {

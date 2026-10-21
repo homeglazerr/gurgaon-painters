@@ -2,6 +2,7 @@
 
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { services } from "../services/services";
 
@@ -26,12 +27,17 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2 px-1 py-2 text-[#0B1F4D] sm:gap-3 sm:px-2"
+          className="flex shrink-0 items-center px-1 py-1 sm:px-2"
           aria-label="Gurgaon Painters - Home"
         >
-          <span className="whitespace-nowrap text-[0.68rem] font-black tracking-[0.055em] sm:text-sm sm:tracking-[0.08em] lg:text-base">
-            GURGAON PAINTERS
-          </span>
+          <Image
+            src="/gurgaon-painters-logo-transparent.png"
+            alt="Gurgaon Painters"
+            width={1215}
+            height={433}
+            priority
+            className="h-8 w-[5.5rem] object-contain sm:h-9 sm:w-[7.5rem] lg:h-10 lg:w-36"
+          />
         </Link>
 
         {/* Desktop nav links */}

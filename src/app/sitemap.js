@@ -17,6 +17,7 @@ export default function sitemap() {
     { url: `${siteUrl}/why-us`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${siteUrl}/contact`, changeFrequency: "yearly", priority: 0.7 },
     { url: `${siteUrl}/cookies`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${siteUrl}/privacy-policy`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${siteUrl}/services`, changeFrequency: "monthly", priority: 0.8 },
     ...services.map(({ slug }) => ({
       url: `${siteUrl}/services/${slug}`,

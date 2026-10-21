@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import RoomColorCanvas from "./RoomColorCanvas";
 
 const colors = [
@@ -16,23 +16,32 @@ const colors = [
 
 export default function VisualizeRoomColor() {
   const [wallColor, setWallColor] = useState(colors[0].value);
+  const intervalIdRef = useRef(null);
 
   useEffect(() => {
     let nextColorIndex = 1;
-    const intervalId = window.setInterval(() => {
+
+    intervalIdRef.current = window.setInterval(() => {
       setWallColor(colors[nextColorIndex].value);
-      nextColorIndex = (nextColorIndex + 1) % 8;
+      nextColorIndex = (nextColorIndex + 1) % colors.length;
     }, 2500);
 
-    return () => window.clearInterval(intervalId);
+    return () => {
+      window.clearInterval(intervalIdRef.current);
+    };
   }, []);
+
+  function handleColorSelect(color) {
+    window.clearInterval(intervalIdRef.current);
+    setWallColor(color);
+  }
 
   return (
     <section
       id="visualize-color"
       className="bg-[#f6f6f4] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16"
     >
-        <div className="mx-auto grid max-w-[88rem] items-center gap-7 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+      <div className="mx-auto grid max-w-[88rem] items-center gap-7 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
         <div className="relative aspect-[5/3] overflow-hidden rounded-md shadow-[0_18px_50px_rgba(41,37,31,0.14)]">
           <RoomColorCanvas
             imageSrc="/images/room-color-visualizer.webp"
@@ -69,7 +78,7 @@ export default function VisualizeRoomColor() {
                   type="button"
                   aria-label={name}
                   aria-pressed={wallColor === value}
-                  onClick={() => setWallColor(value)}
+                  onClick={() => handleColorSelect(value)}
                   className={`h-10 w-10 rounded-full border-2 transition-transform hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2410c] ${wallColor === value ? "border-[#29251f] ring-2 ring-white" : "border-white shadow-sm"}`}
                   style={{ backgroundColor: value }}
                 />

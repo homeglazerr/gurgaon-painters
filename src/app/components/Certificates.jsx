@@ -70,9 +70,11 @@ export default function Certificates() {
                 <h3 className="text-sm font-semibold text-[#29251f] sm:text-base">
                   {certificate.name}
                 </h3>
-                <p className="mt-1 text-xs leading-5 text-[#777166] sm:text-sm">
-                  {certificate.detail}
-                </p>
+                {certificate.detail && (
+                  <p className="mt-1 text-xs leading-5 text-[#777166] sm:text-sm">
+                    {certificate.detail}
+                  </p>
+                )}
               </div>
             </article>
           ))}

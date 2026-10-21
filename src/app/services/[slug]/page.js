@@ -72,6 +72,25 @@ export default async function ServicePage({ params }) {
             </ul>
             <p className="mt-8 text-sm leading-6 text-[#777166]">The recommended materials, preparation, and schedule depend on the property and site assessment. Gurgaon Painters by Home Glazer serves residential and commercial projects across Gurgaon (Gurugram).</p>
           </section>
+          <section className="mx-auto mt-12 max-w-4xl border-t border-[#29251f]/15 pt-8" aria-labelledby="planning-heading">
+            <h2 id="planning-heading" className="text-2xl font-semibold text-[#29251f]">Planning {service.shortTitle.toLowerCase()} in Gurgaon</h2>
+            <div className="mt-5 grid gap-6 md:grid-cols-2">
+              {service.guidance.map(({ title, text }) => (
+                <article key={title}>
+                  <h3 className="text-lg font-semibold text-[#29251f]">{title}</h3>
+                  <p className="mt-2 text-base leading-7 text-[#69645b]">{text}</p>
+                </article>
+              ))}
+            </div>
+            <div className="mt-8 rounded-md bg-white p-5 sm:p-6">
+              <h3 className="text-lg font-semibold text-[#29251f]">Before requesting a quote</h3>
+              <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+                {service.quoteChecklist.map((item) => (
+                  <li key={item} className="border-l-2 border-[#c2410c] pl-3 text-sm leading-6 text-[#69645b]">{item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
           <nav aria-label="Other painting services" className="mt-12 border-t border-[#29251f]/15 pt-6">
             <h2 className="text-xl font-semibold text-[#29251f]">Explore other services</h2>
             <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
