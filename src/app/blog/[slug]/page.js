@@ -63,7 +63,7 @@ export default async function ArticlePage({ params }) {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c2410c]">{article.category} · Gurgaon Painters guide</p>
             <h1 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-5xl">{article.title}</h1>
             <p className="mt-5 max-w-6xl text-lg leading-8 text-[#69645b]">{article.description}</p>
-            <p className="mt-4 text-sm text-[#777166]">Published by Gurgaon Painters by Home Glazer</p>
+            <p className="mt-4 text-sm text-[#777166]">Published by Gurgaon Painters by <a href="https://homeglazer.com" target="_blank" rel="noopener noreferrer" className="font-medium text-[#c2410c] hover:underline">Home Glazer</a></p>
           </header>
           <div className="relative mt-8 aspect-[16/8] overflow-hidden rounded-md">
             <Image src={article.image} alt={article.imageAlt} fill preload sizes="(max-width: 767px) 100vw, 896px" className="object-cover" />
