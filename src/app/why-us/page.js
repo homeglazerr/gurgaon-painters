@@ -27,9 +27,9 @@ export default function WhyUsPage() {
   return (
     <main className="relative min-h-screen bg-[#f6f6f4]">
       <Navbar />
-      <Breadcrumbs width="7xl" items={[{ label: "Home", href: "/" }, { label: "Why Us" }]} />
+      <Breadcrumbs width="6xl" items={[{ label: "Home", href: "/" }, { label: "Why Us" }]} />
       <section className="px-5 pb-14 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:px-12">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-6xl">
           <header className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c2410c]">Our approach</p>
             <h1 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-5xl">Why choose Gurgaon Painters?</h1>
@@ -44,7 +44,7 @@ export default function WhyUsPage() {
               </article>
             ))}
           </div>
-          <div className="mx-auto mt-10 max-w-3xl border-t border-[#29251f]/15 pt-7 text-center">
+          <div className="mx-auto mt-10 max-w-6xl border-t border-[#29251f]/15 pt-7 text-center">
             <h2 className="text-2xl font-semibold text-[#29251f]">Plan a painting project in Gurgaon</h2>
             <p className="mt-3 leading-7 text-[#69645b]">Explore our painting services or share your requirements for a site discussion and quote.</p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

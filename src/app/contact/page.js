@@ -20,7 +20,7 @@ export default function ContactPage() {
   return (
     <main className="relative min-h-screen bg-[#f6f6f4]">
       <Navbar />
-      <Breadcrumbs width="7xl" items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
+      <Breadcrumbs width="6xl" items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
       <header className="px-5 pb-0 pt-28 text-center sm:px-8 sm:pt-32 lg:px-12">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c2410c]">Gurgaon &amp; Gurugram</p>
         <h1 className="mx-auto mt-4 max-w-3xl text-4xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-5xl">Contact Gurgaon Painters</h1>

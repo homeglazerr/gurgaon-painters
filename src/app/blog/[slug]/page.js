@@ -56,19 +56,19 @@ export default async function ArticlePage({ params }) {
     <main className="relative min-h-screen bg-[#f6f6f4]">
       <Navbar />
       <article className="px-5 pb-14 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:px-12">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-6xl">
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
           <Breadcrumbs inline items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: article.title }]} />
           <header className="mt-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c2410c]">{article.category} · Gurgaon Painters guide</p>
             <h1 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-5xl">{article.title}</h1>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-[#69645b]">{article.description}</p>
+            <p className="mt-5 max-w-6xl text-lg leading-8 text-[#69645b]">{article.description}</p>
             <p className="mt-4 text-sm text-[#777166]">Published by Gurgaon Painters by Home Glazer</p>
           </header>
           <div className="relative mt-8 aspect-[16/8] overflow-hidden rounded-md">
             <Image src={article.image} alt={article.imageAlt} fill preload sizes="(max-width: 767px) 100vw, 896px" className="object-cover" />
           </div>
-          <div className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-8 text-[#514b41]">
+          <div className="mx-auto mt-8 max-w-6xl space-y-5 text-base leading-8 text-[#514b41]">
             {article.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             <h2 className="pt-2 text-2xl font-semibold text-[#29251f]">What to check</h2>
             <ul className="list-disc space-y-2 pl-5">

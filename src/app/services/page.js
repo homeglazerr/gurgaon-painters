@@ -27,9 +27,9 @@ export default function ServicesPage() {
   return (
     <main className="relative min-h-screen bg-[#f6f6f4]">
       <Navbar />
-      <Breadcrumbs width="7xl" items={[{ label: "Home", href: "/" }, { label: "Services" }]} />
+      <Breadcrumbs width="6xl" items={[{ label: "Home", href: "/" }, { label: "Services" }]} />
       <section className="px-5 pb-14 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:px-12">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-6xl">
           <header className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c2410c]">Gurgaon &amp; Gurugram</p>
             <h1 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-5xl">Painting services for your property</h1>

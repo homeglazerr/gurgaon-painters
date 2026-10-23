@@ -38,7 +38,7 @@ export default function BlogSection() {
       className="bg-[#f9f9f7] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16"
       aria-labelledby="blog-heading"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-6xl">
         <header className="mx-auto mb-6 max-w-3xl text-center sm:mb-8">
           <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#29251f]">
             <span className="h-px w-8 bg-[#c2410c]" />

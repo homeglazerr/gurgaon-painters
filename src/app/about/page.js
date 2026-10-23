@@ -21,9 +21,9 @@ export default function AboutPage() {
   return (
     <main className="relative min-h-screen bg-[#f6f6f4]">
       <Navbar />
-      <Breadcrumbs width="4xl" items={[{ label: "Home", href: "/" }, { label: "About" }]} />
+      <Breadcrumbs width="6xl" items={[{ label: "Home", href: "/" }, { label: "About" }]} />
       <section className="px-5 pb-12 pt-28 sm:px-8 sm:pb-16 sm:pt-32 lg:px-12">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-6xl">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#c2410c]">
             About Gurgaon Painters
           </p>

@@ -28,7 +28,7 @@ const steps = [
 export default function HowWeDoIt() {
   return (
     <section id="process" className="bg-[#ffff] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16" aria-label="Our painting process">
-      <ol className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-0">
+      <ol className="mx-auto grid max-w-6xl grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-0">
         {steps.map(({ number, title, description }) => (
           <li key={number} className="flex flex-col items-center text-center">
             <div className="relative mb-6 flex h-[180px] w-[180px] items-center justify-center rounded-full bg-[linear-gradient(115deg,#f2e8df_0%,#e4ad91_58%,#c2410c_100%)] p-[30px]">

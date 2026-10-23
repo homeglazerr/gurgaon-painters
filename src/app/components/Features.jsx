@@ -30,7 +30,7 @@ const features = [
 export default function Features() {
   return (
     <section id="features" className="bg-[#f9f9f7] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-6xl">
         <div className="mx-auto mb-6 max-w-3xl text-center sm:mb-8">
           <div>
             <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#000000]">

@@ -23,9 +23,9 @@ export default function BlogPage() {
   return (
     <main className="relative min-h-screen bg-[#f6f6f4]">
       <Navbar />
-      <Breadcrumbs width="7xl" items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
+      <Breadcrumbs width="6xl" items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
       <section className="px-5 pb-12 pt-28 sm:px-8 sm:pb-16 sm:pt-32 lg:px-12">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-6xl">
           <header className="mx-auto max-w-3xl text-center">
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#c2410c]">Gurgaon Painters guide</p>
             <h1 className="text-5xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-6xl">Practical painting advice for Gurgaon homes.</h1>

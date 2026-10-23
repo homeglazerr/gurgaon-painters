@@ -7,7 +7,7 @@ export default function PageFAQs({ faqs, title = "Frequently asked questions", i
   return (
     <section id={id} className={`${className} px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16`} aria-labelledby={`${id}-heading`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-6xl">
         <header className="mx-auto mb-6 max-w-3xl text-center sm:mb-8">
           <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#29251f]">
             <span className="h-px w-8 bg-[#c2410c]" />FAQs<span className="h-px w-8 bg-[#c2410c]" />

@@ -34,7 +34,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="bg-[#ffff] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
-      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div className="text-left">
           <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#29251f]">
             <span className="h-px w-8 bg-[#c2410c]" />

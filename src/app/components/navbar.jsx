@@ -22,7 +22,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
       <nav
         aria-label="Main navigation"
-        className="relative mx-auto flex max-w-7xl items-center justify-between gap-2 rounded-full border border-slate-200 bg-white/95 px-3 py-2 shadow-[0_10px_30px_rgba(15,23,42,0.12)] backdrop-blur-md sm:gap-4 sm:px-5 sm:py-2.5 lg:px-7"
+        className="relative mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-full border border-slate-200 bg-white/95 px-3 py-2 shadow-[0_10px_30px_rgba(15,23,42,0.12)] backdrop-blur-md sm:gap-4 sm:px-5 sm:py-2.5 lg:px-7"
       >
         {/* Logo */}
         <Link

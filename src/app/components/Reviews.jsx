@@ -197,7 +197,7 @@ export default function Reviews() {
       className="bg-white px-5 py-6 sm:px-8 sm:py-8 lg:px-12 lg:py-10"
       aria-labelledby="reviews-heading"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-6xl">
         <header className="mx-auto mb-6 flex max-w-3xl flex-col items-center text-center sm:mb-8">
           <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#29251f]">
             <span className="h-px w-8 bg-[#c2410c]" />

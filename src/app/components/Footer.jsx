@@ -23,7 +23,7 @@ export default async function Footer() {
   return (
     <footer className="bg-[#1a1612] text-white">
       {/* Main footer content */}
-      <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
+      <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Brand column */}
           <div>
