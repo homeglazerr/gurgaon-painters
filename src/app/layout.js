@@ -1,4 +1,5 @@
 import { Poppins, Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { getSiteUrl } from "./site-url";
 import ScrollReveal from "./components/ScrollReveal";
@@ -64,6 +65,18 @@ export default function RootLayout({ children }) {
     <html lang="en-IN" className={`${spaceGrotesk.variable} ${poppins.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-97JCZ7L7L2"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-97JCZ7L7L2');
+          `}
+        </Script>
         <ScrollReveal />
         <CookieNotice />
         <WhatsAppButton />
