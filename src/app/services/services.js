@@ -10,7 +10,6 @@ export const services = [
     imageAlt: "Painter applying a fresh coat to a bright home interior",
     intro: "Walls are among the largest surfaces in a room, and their preparation and finish shape how the space looks and feels. Gurgaon Painters by Home Glazer provides interior painting in Gurgaon and Gurugram for apartments, builder floors, independent houses, villas, offices and shops. Home Glazer states that its team brings more than 35 years of painting experience. A free site visit helps discuss the walls, your preferences and a clear scope before work begins.",
     details: ["Wall and ceiling painting for single rooms, selected areas or complete properties.", "Surface repairs such as filling cracks and patches, where included in the agreed scope.", "Primer and finish coats selected for the room, surface and product guidance.", "Protection of floors, furniture, switchboards and fittings during the agreed work."],
-    quoteChecklist: ["List the rooms, ceilings and woodwork to be included.", "Point out cracks, peeling areas, stains or previous repairs.", "Shortlist colours and sheen, and view samples in your own lighting.", "Confirm preparation, coats, protection, clean-up and exclusions in writing."],
   },
   {
     slug: "exterior-painting-gurgaon",
@@ -23,7 +22,6 @@ export const services = [
     imageAlt: "Painter refreshing the exterior of a modern home",
     intro: "An exterior wall meets sun, dust and rain, so the coating needs to suit the facade and its condition. Gurgaon Painters by Home Glazer provides exterior painting in Gurgaon and Gurugram for independent houses, villas, builder floors, apartment buildings and commercial properties. Home Glazer states that its team brings more than 35 years of painting experience. Planning begins with discussing the existing surface and the work needed before choosing a finish.",
     details: ["Exterior wall painting for houses, villas, boundary walls and building facades.", "Review of loose paint, cracks, chalking, algae or visible damp marks.", "Cleaning, repairs, primer and finish coats as agreed for the facade.", "Access, protection and work sequencing discussed before scheduling."],
-    quoteChecklist: ["Identify the facade sections, boundary walls and gates in scope.", "Share building height and access requirements.", "Point out peeling, chalking, cracks, damaged plaster or damp marks.", "Confirm repairs, primer, coats, protection and work sequence in writing."],
   },
   {
     slug: "wall-texture-painting-gurgaon",
@@ -36,7 +34,6 @@ export const services = [
     imageAlt: "Artisan applying a decorative finish to an interior wall",
     intro: "A well-chosen texture can give a room depth and character beyond a flat colour. Gurgaon Painters by Home Glazer provides wall texture painting in Gurgaon and Gurugram for living rooms, bedrooms, foyers, staircases, offices and reception areas. The pattern, colour, lighting and wall condition all matter, so discuss samples and preparation before confirming the design and application scope.",
     details: ["Discussion of texture styles and suitable feature wall locations.", "Review of samples against room lighting, furniture and surrounding colours.", "Wall inspection and preparation based on the existing coating and condition.", "Application and finishing according to the selected system and agreed scope."],
-    quoteChecklist: ["Choose the wall or walls and note approximate dimensions.", "Collect reference images and review a sample in the room's lighting.", "Point out cracks, damp marks, peeling or previous repairs.", "Confirm pattern, colour, base preparation and application area in writing."],
   },
   {
     slug: "waterproofing-services-gurgaon",
@@ -49,7 +46,6 @@ export const services = [
     imageAlt: "Protective coating being applied to a rooftop terrace",
     intro: "Recurring damp patches, peeling paint and terrace leakage call for understanding the likely moisture source before choosing a treatment. Gurgaon Painters by Home Glazer provides waterproofing services in Gurgaon and Gurugram for terraces, damp walls and exposed surfaces. A coating alone may not resolve a plumbing, joint or structural issue, so the proposed work should be based on the affected area and site assessment.",
     details: ["Assessment of visible moisture symptoms on terraces, walls and exposed surfaces.", "Discussion of the likely source and any checks or repairs needed first.", "Treatment selection based on the surface and site conditions.", "Guidance on curing, drying and when repainting can begin, following product instructions."],
-    quoteChecklist: ["Note when dampness appears and whether it changes after rain or water use.", "Identify nearby terraces, bathrooms, windows, pipes and joints.", "Ask what source is suspected and what observations support that assessment.", "Confirm repairs, treatment area, curing time and repainting requirements."],
   },
   {
     slug: "wood-metal-painting-polish-gurgaon",
@@ -65,7 +61,6 @@ export const services = [
       { title: "Identify the material and existing finish", text: "Wood and metal need different preparation and finishing systems. The assessment should establish the material, existing coating, wear, exposure, and intended use. For example, a frequently handled door and an outdoor railing face different conditions, so one finish should not be assumed to suit both." },
       { title: "Discuss preparation and the finish you expect", text: "Ask whether the existing coating needs cleaning, sanding, removal, rust treatment, or a suitable primer before refinishing. Confirm the colour or polish, sheen, areas to be covered, and how nearby surfaces will be protected. Product selection should follow the material and site conditions." },
     ],
-    quoteChecklist: ["List each wooden or metal item and where it is located.", "Point out worn, peeling, corroded, or previously repaired areas.", "Discuss the desired colour, polish, sheen, and intended use.", "Confirm preparation, primer or treatment, protection, and included surfaces."],
   },
   {
     slug: "commercial-painting-gurgaon",
@@ -81,6 +76,5 @@ export const services = [
       { title: "Define the work zones and operating constraints", text: "For an office, shop, apartment building, or shared property, list the rooms and surfaces in scope and note when people use them. Access, furniture or equipment, noise-sensitive periods, and shared corridors can affect sequencing. Agree on access arrangements and any restricted areas before scheduling." },
       { title: "Make the project scope clear for each area", text: "Different rooms or facade sections may need different preparation and finishes. Ask the contractor to document the surfaces, repairs, materials, coats, protection, work sequence, and clean-up included in the proposal. If the property remains in use, clarify how completed and active work areas will be separated." },
     ],
-    quoteChecklist: ["List floors, rooms, common areas, and exterior sections to be painted.", "Share access times, occupancy, and any operating constraints.", "Confirm preparation, materials, coats, protection, and clean-up by area.", "Agree on work sequencing, site coordination, and any exclusions."],
   },
 ];

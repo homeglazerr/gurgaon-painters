@@ -61,16 +61,6 @@ export const servicePageContent = {
         "The website displays ISO 9001:2015, MSME, DPIIT and labour registration marks. Their current validity and scope should be checked with the issuing authorities. Customer reviews are available through the Google review link on this site; review comments reflect individual customers' experiences.",
       ],
     },
-    {
-      heading: "Before you request an interior painting quote",
-      items: [
-        "List the rooms, ceilings and woodwork to be included.",
-        "Point out cracks, peeling areas, stains or previous repairs.",
-        "Shortlist colours and sheen, and view samples in your own lighting.",
-        "Check your society's working hours and permission requirements.",
-        "Confirm preparation, coats, protection, clean-up and exclusions in writing.",
-      ],
-    },
   ],
   "exterior-painting-gurgaon": [
     {
@@ -132,16 +122,6 @@ export const servicePageContent = {
       paragraphs: [
         "The service area stated by Gurgaon Painters by Home Glazer is Gurgaon (Gurugram), Haryana. Share the property location and facade details when you enquire so the team can confirm availability and access arrangements.",
         "The website displays ISO 9001:2015, MSME, DPIIT and labour registration marks. Check their current validity and scope with the issuing authorities. The site's Google review link provides customer comments about their own projects and experiences.",
-      ],
-    },
-    {
-      heading: "Before you request an exterior painting quote",
-      items: [
-        "Identify the facade sections, boundary walls and gates in scope.",
-        "Share the building height and access requirements.",
-        "Point out peeling, chalking, cracks, damaged plaster or damp marks.",
-        "Ask which cleaning, repairs, primer and coats are included.",
-        "Confirm protection, working conditions and work sequence in writing.",
       ],
     },
   ],
@@ -211,15 +191,6 @@ export const servicePageContent = {
       paragraphs: [
         "Gurgaon Painters by Home Glazer serves projects across Gurgaon (Gurugram). Share the property location and wall details when you enquire so the team can confirm service availability.",
         "The website displays ISO 9001:2015, MSME, DPIIT and labour registration marks. Please verify validity and scope with the issuing authorities. The website's Google review link leads to customer feedback; each review reflects an individual experience.",
-      ],
-    },
-    {
-      heading: "Before you request a wall texture quote",
-      items: [
-        "Choose the wall or walls and note approximate dimensions.",
-        "Collect reference images and review samples in the room's lighting.",
-        "Point out cracks, damp marks, peeling or previous repairs.",
-        "Confirm the pattern, colour, base preparation and application area in writing.",
       ],
     },
   ],
@@ -298,16 +269,6 @@ export const servicePageContent = {
       paragraphs: [
         "Gurgaon Painters by Home Glazer serves projects across Gurgaon (Gurugram). Share the property location and when the symptoms occur so the team can confirm service availability and discuss next steps.",
         "The website displays ISO 9001:2015, MSME, DPIIT and labour registration marks. Their current validity and scope should be checked with the issuing authorities. The business also links to customer reviews on Google; comments reflect individual customer experiences.",
-      ],
-    },
-    {
-      heading: "Before you request a waterproofing quote",
-      items: [
-        "Note when dampness appears and whether it changes after rain or water use.",
-        "Identify nearby terraces, bathrooms, windows, pipes and joints.",
-        "Ask what source is suspected and which observations support that assessment.",
-        "Confirm repairs, treatment area, curing time and repainting requirements.",
-        "Take dated photos to help document changes over time.",
       ],
     },
   ],

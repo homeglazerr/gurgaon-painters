@@ -109,12 +109,6 @@ export default async function ServicePage({ params }) {
                   {section.closing && <p className="mt-4 text-base leading-7 text-[#69645b]">{section.closing}</p>}
                 </section>
               ))}
-              <section className="rounded-md bg-white p-5 sm:p-6" aria-labelledby="quote-checklist-heading">
-                <h2 id="quote-checklist-heading" className="text-xl font-semibold text-[#29251f]">Before requesting a quote</h2>
-                <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                  {service.quoteChecklist.map((item) => <li key={item} className="border-l-2 border-[#c2410c] pl-3 text-sm leading-6 text-[#69645b]">{item}</li>)}
-                </ul>
-              </section>
             </div>
           ) : (
           <section className="mx-auto mt-12 max-w-4xl border-t border-[#29251f]/15 pt-8" aria-labelledby="planning-heading">
@@ -127,16 +121,17 @@ export default async function ServicePage({ params }) {
                 </article>
               ))}
             </div>
-            <div className="mt-8 rounded-md bg-white p-5 sm:p-6">
-              <h3 className="text-lg font-semibold text-[#29251f]">Before requesting a quote</h3>
-              <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-                {service.quoteChecklist.map((item) => (
-                  <li key={item} className="border-l-2 border-[#c2410c] pl-3 text-sm leading-6 text-[#69645b]">{item}</li>
-                ))}
-              </ul>
-            </div>
           </section>
           )}
+          <section className="mx-auto mt-12 max-w-4xl rounded-md bg-[#29251f] px-6 py-8 text-center text-white sm:px-10 sm:py-10" aria-labelledby="service-cta-heading">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#f2a17e]">Gurgaon &amp; Gurugram</p>
+            <h2 id="service-cta-heading" className="mt-3 text-2xl font-semibold sm:text-3xl">Planning {service.shortTitle.toLowerCase()} for your property?</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-white/75 sm:text-base">Talk with Home Glazer about your project and arrange a free site visit.</p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link href="/contact" className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#c2410c] px-6 text-sm font-bold text-white transition-colors hover:bg-[#9a3412]">Get a Free Site Visit</Link>
+              <a href="tel:+919717256514" className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/40 px-6 text-sm font-bold text-white transition-colors hover:bg-white hover:text-[#29251f]">Call +91 97172 56514</a>
+            </div>
+          </section>
           <nav aria-label="Other painting services" className="mt-12 border-t border-[#29251f]/15 pt-6">
             <h2 className="text-xl font-semibold text-[#29251f]">Explore other services</h2>
             <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
