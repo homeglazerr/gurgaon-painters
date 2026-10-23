@@ -24,13 +24,13 @@ export default function Breadcrumbs({ items, inline = false, onDark = false, wid
       >
         <nav
           aria-label="Breadcrumb"
-          className={`pointer-events-auto flex max-w-full items-center gap-2 overflow-x-auto whitespace-nowrap text-xs ${onDark ? "text-white/75" : "text-[#69645b]"}`}
+          className={`pointer-events-auto flex w-full min-w-0 max-w-full items-center gap-2 overflow-hidden whitespace-nowrap text-xs ${onDark ? "text-white/75" : "text-[#69645b]"}`}
         >
           {items.map((item, index) => (
-            <span key={`${item.label}-${index}`} className="inline-flex shrink-0 items-center gap-2">
+            <span key={`${item.label}-${index}`} className={`inline-flex min-w-0 items-center gap-2 ${index === items.length - 1 ? "flex-1" : "shrink-0"}`}>
               {index > 0 && <span aria-hidden="true" className="text-[#c2410c]">/</span>}
               {index === items.length - 1 ? (
-                <span aria-current="page" className={`font-semibold ${onDark ? "text-white" : "text-[#29251f]"}`}>{item.label}</span>
+                <span aria-current="page" title={item.label} className={`block min-w-0 truncate font-semibold ${onDark ? "text-white" : "text-[#29251f]"}`}>{item.label}</span>
               ) : (
                 <Link href={item.href} className="transition-colors hover:text-[#c2410c]">{item.label}</Link>
               )}
