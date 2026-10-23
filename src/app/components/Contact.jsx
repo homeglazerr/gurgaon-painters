@@ -33,7 +33,7 @@ export default function Contact() {
     "mt-2 w-full rounded-md border border-[#dedbd4] bg-white px-4 py-3 text-sm text-[#29251f] outline-none transition focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20";
 
   return (
-    <section id="contact" className="bg-[#ffff] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
+    <section id="contact" className="bg-[#f6f6f4] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div className="text-left">
           <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#29251f]">
@@ -63,7 +63,7 @@ export default function Contact() {
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-md border border-[#e7e2d9] bg-transparent p-5 sm:p-7 lg:p-8"
+          className="rounded-md border border-[#e7e2d9] bg-white p-5 sm:p-7 lg:p-8"
         >
           <div className="grid gap-5 sm:grid-cols-2">
             <label className="text-sm font-medium text-[#514b41]">
