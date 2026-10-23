@@ -21,19 +21,19 @@ const poppins = Poppins({
 });
 
 const rootSeo = createSeoMetadata({
-  title: "House Painters in Gurgaon | Home Glazer",
+  title: "House Painters in Gurgaon | Gurgaon Painters",
   description: "Looking for painters in Gurgaon? Home Glazer handles interior and exterior painting, wall textures, waterproofing, and wood and metal finishes for homes and businesses.",
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "Gurgaon Painters by Home Glazer",
-    title: "House Painters in Gurgaon | Home Glazer",
+    siteName: "Gurgaon Painters",
+    title: "House Painters in Gurgaon | Gurgaon Painters",
     description: "Interior and exterior painting, wall textures, waterproofing, and wood and metal finishes for homes and businesses in Gurgaon.",
     ...(siteUrl ? { url: siteUrl, images: ["/images/hero-image-two.webp"] } : {}),
   },
   twitter: {
     card: "summary_large_image",
-    title: "House Painters in Gurgaon | Home Glazer",
+    title: "House Painters in Gurgaon | Gurgaon Painters",
     description: "Painting for Gurgaon homes and businesses: interiors, exteriors, wall textures, waterproofing, and wood and metal finishes.",
     ...(siteUrl ? { images: ["/images/hero-image-two.webp"] } : {}),
   },
@@ -43,7 +43,7 @@ export const metadata = {
   ...rootSeo,
   metadataBase: siteUrl ? new URL(siteUrl) : undefined,
   title: { default: rootSeo.title.absolute, template: "%s" },
-  applicationName: "Gurgaon Painters by Home Glazer",
+  applicationName: "Gurgaon Painters",
   keywords: [
     "painters in Gurgaon",
     "painters in Gurugram",

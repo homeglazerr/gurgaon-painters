@@ -10,7 +10,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 const siteUrl = getSiteUrl();
 
 export const metadata = createSeoMetadata({
-  title: "Contact Gurgaon Painters | Home Glazer",
+  title: "Contact Us | Gurgaon Painters",
   description: "Contact Gurgaon Painters by Home Glazer to discuss painting, waterproofing, wall textures, and other work for your Gurgaon property.",
   ...(siteUrl ? { alternates: { canonical: `${siteUrl}/contact` } } : {}),
   openGraph: { url: siteUrl ? `${siteUrl}/contact` : undefined, type: "website" },

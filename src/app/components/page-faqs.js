@@ -15,7 +15,7 @@ export const pageFaqs = {
   whyUs: [
     { question: "What is included in the painting project discussion?", answer: "The discussion can cover the property, surface condition, preparation, finish preferences, work scope, and coordination needed for the project." },
     { question: "Does Home Glazer offer a site visit in Gurgaon?", answer: "Contact the team to discuss your property and arrange a site visit. The visit helps clarify the requirements and the work to be quoted." },
-    { question: "How much painting experience does the team have?", answer: "Home Glazer states that its team brings more than 35 years of painting experience. Project recommendations are still based on the surfaces and requirements at each property." },
+    { question: "How much painting experience does the team have?", answer: "Home Glazer reports that it was founded in 2008 and has completed more than 5,000 projects. Recommendations are still based on the surfaces and requirements at each property." },
   ],
   contact: [
     { question: "How can I contact Gurgaon Painters?", answer: "Call +91 97172 56514 or use the enquiry form on this page. Submitting the form opens WhatsApp with your project details ready for you to review and send." },

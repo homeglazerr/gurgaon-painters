@@ -10,7 +10,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 const siteUrl = getSiteUrl();
 
 export const metadata = createSeoMetadata({
-  title: "About Gurgaon Painters | Home Glazer",
+  title: "About Us | Gurgaon Painters",
   description: "Meet Gurgaon Painters by Home Glazer. Learn how we plan painting, surface preparation, and finishing for homes and businesses in Gurgaon.",
   ...(siteUrl ? { alternates: { canonical: `${siteUrl}/about` } } : {}),
   openGraph: { url: siteUrl ? `${siteUrl}/about` : undefined, type: "website" },
@@ -32,10 +32,20 @@ export default function AboutPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-[#69645b]">
             Gurgaon Painters by Home Glazer helps homeowners and businesses
-            refresh and protect their spaces. Home Glazer states that its team
-            brings more than 35 years of painting experience. We serve
+            refresh and protect their spaces. Home Glazer reports that it was
+            founded in 2008 and has completed more than 5,000 projects. We serve
             residential and commercial projects across Gurgaon (Gurugram).
           </p>
+          <dl className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-md border border-[#29251f]/10 bg-white p-5 shadow-[0_8px_24px_rgba(35,31,24,0.05)]">
+              <dt className="text-sm text-[#69645b]">Serving customers since</dt>
+              <dd className="mt-2 text-3xl font-semibold tracking-[-0.04em] text-[#c2410c]">2008</dd>
+            </div>
+            <div className="rounded-md border border-[#29251f]/10 bg-white p-5 shadow-[0_8px_24px_rgba(35,31,24,0.05)]">
+              <dt className="text-sm text-[#69645b]">Projects completed</dt>
+              <dd className="mt-2 text-3xl font-semibold tracking-[-0.04em] text-[#c2410c]">5,000+</dd>
+            </div>
+          </dl>
           <div className="mt-8 grid gap-6 border-t border-[#29251f]/10 pt-6 sm:grid-cols-2">
             <div>
               <h2 className="text-2xl font-medium text-[#29251f]">What we do</h2>
@@ -49,13 +59,30 @@ export default function AboutPage() {
             <div>
               <h2 className="text-2xl font-medium text-[#29251f]">How we work</h2>
               <p className="mt-3 leading-7 text-[#69645b]">
-                We begin by understanding the project and arranging a site
-                visit. The scope and quote are discussed before work begins;
-                preparation and finishing depend on the surface and selected
-                coating system.
+                We begin with a free consultation, then arrange a site visit to
+                review the space and plan the work. You receive a clear quote
+                before execution; preparation and finishing depend on the
+                surface and selected coating system.
               </p>
             </div>
           </div>
+          <section className="mt-10 border-t border-[#29251f]/10 pt-8" aria-labelledby="our-process-heading">
+            <h2 id="our-process-heading" className="text-2xl font-medium text-[#29251f]">A clear process from first discussion to finish</h2>
+            <ol className="mt-5 grid gap-3 sm:grid-cols-2">
+              {[
+                ["Free consultation", "Tell us about your property, requirements and preferred finish."],
+                ["Site visit and planning", "Review the surfaces, access and work areas at the property."],
+                ["Transparent quote", "Agree on the work scope and quote before the project begins."],
+                ["Execution", "The team carries out the agreed preparation and painting work."],
+              ].map(([title, text], index) => (
+                <li key={title} className="rounded-md border border-[#29251f]/10 bg-white p-5 shadow-[0_8px_24px_rgba(35,31,24,0.05)]">
+                  <span className="text-xs font-bold tracking-[0.18em] text-[#c2410c]">{String(index + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-2 text-lg font-semibold text-[#29251f]">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[#69645b]">{text}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
           <Link
             href="/contact"
             className="mt-8 inline-flex min-h-12 items-center rounded-full bg-[#c2410c] px-6 text-sm font-bold text-white transition-colors hover:bg-[#9a3412]"
@@ -64,7 +91,7 @@ export default function AboutPage() {
           </Link>
         </div>
       </section>
-      <PageFAQs faqs={pageFaqs.about} title="About Home Glazer: common questions" className="bg-[#f6f6f4]" />
+      <PageFAQs faqs={pageFaqs.about} title="About Gurgaon Painters: common questions" className="bg-[#f6f6f4]" />
       <Footer />
     </main>
   );

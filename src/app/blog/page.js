@@ -12,7 +12,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 const siteUrl = getSiteUrl();
 
 export const metadata = createSeoMetadata({
-  title: "Gurgaon Painting Guides | Home Glazer",
+  title: "Gurgaon Painting Guides | Gurgaon Painters",
   description: "Practical painting guides for Gurgaon: choosing interior paint finishes, preparing an exterior repaint, and spotting signs of moisture before painting.",
   ...(siteUrl ? { alternates: { canonical: `${siteUrl}/blog` } } : {}),
   openGraph: { url: siteUrl ? `${siteUrl}/blog` : undefined, type: "website" },

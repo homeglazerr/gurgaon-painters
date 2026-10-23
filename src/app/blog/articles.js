@@ -3,7 +3,7 @@ export const articles = [
     slug: "choose-paint-finish-for-each-room",
     category: "Interior planning",
     title: "How to choose the right paint finish for each room",
-    seoTitle: "Choosing Paint Finishes in Gurgaon | Home Glazer",
+    seoTitle: "Choosing Paint Finishes in Gurgaon | Gurgaon Painters",
     description:
       "Choose a paint finish by balancing how a room is used, wall condition, appearance, and the product's care instructions.",
     paragraphs: [
@@ -24,7 +24,7 @@ export const articles = [
     slug: "exterior-house-repainting-checklist-gurgaon",
     category: "Exterior painting",
     title: "What to check before repainting your home's exterior",
-    seoTitle: "Exterior Repainting Checklist for Gurgaon | Home Glazer",
+    seoTitle: "Exterior Repainting Checklist for Gurgaon | Gurgaon Painters",
     description:
       "Inspect the existing coating and resolve surface or moisture problems before selecting an exterior paint system.",
     paragraphs: [
@@ -45,7 +45,7 @@ export const articles = [
     slug: "early-signs-wall-waterproofing-gurgaon",
     category: "Damp & waterproofing",
     title: "Early signs that a wall may need waterproofing",
-    seoTitle: "Signs of Wall Damp in Gurgaon | Home Glazer",
+    seoTitle: "Signs of Wall Damp in Gurgaon | Gurgaon Painters",
     description:
       "Recurring damp marks and peeling paint may signal moisture; find the source before repainting the wall.",
     paragraphs: [

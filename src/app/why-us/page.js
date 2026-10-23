@@ -10,14 +10,14 @@ import Breadcrumbs from "../components/Breadcrumbs";
 
 const siteUrl = getSiteUrl();
 const reasons = [
-  { title: "Experience to draw on", description: "Home Glazer states that its team brings more than 35 years of painting experience. Each property's surface and scope still need an individual assessment.", icon: Check },
+  { title: "Experience to draw on", description: "Home Glazer reports being founded in 2008 and completing more than 5,000 projects. Each property's surface and scope still need an individual assessment.", icon: Check },
   { title: "Preparation matters", description: "Surface condition, repairs, protection, and the agreed coating system are discussed as part of planning the work.", icon: Paintbrush },
   { title: "Site discussion before work", description: "A site visit helps clarify the property, requirements, colour preferences, and practical details before a quote is agreed.", icon: ShieldCheck },
   { title: "Coordinated project scope", description: "Project coordination and on-site supervision help the team follow the agreed work scope and sequence.", icon: Building2 },
 ];
 
 export const metadata = createSeoMetadata({
-  title: "Why Choose Gurgaon Painters | Home Glazer",
+  title: "Why Choose Us | Gurgaon Painters",
   description: "Learn how Home Glazer plans surface preparation, site visits, painting scope, and project coordination for Gurgaon properties.",
   ...(siteUrl ? { alternates: { canonical: `${siteUrl}/why-us` } } : {}),
   openGraph: { url: siteUrl ? `${siteUrl}/why-us` : undefined, type: "website" },

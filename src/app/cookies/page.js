@@ -13,7 +13,7 @@ const cookieFaqs = [
 ];
 
 export const metadata = createSeoMetadata({
-  title: "Cookie Policy | Home Glazer",
+  title: "Cookie Policy | Gurgaon Painters",
   description: "Learn which cookies Gurgaon Painters by Home Glazer uses, why the cookie notice preference is stored, and how to clear it.",
   ...(siteUrl ? { alternates: { canonical: `${siteUrl}/cookies` } } : {}),
   openGraph: { url: siteUrl ? `${siteUrl}/cookies` : undefined, type: "website" },

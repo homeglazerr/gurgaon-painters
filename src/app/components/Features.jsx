@@ -4,7 +4,7 @@ const features = [
   {
     title: "Trusted Expertise",
     description:
-      "Home Glazer states that its team brings more than 35 years of painting experience.",
+      "Home Glazer reports completing more than 5,000 projects since it was founded in 2008.",
     icon: Check,
   },
   {
