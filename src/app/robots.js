@@ -2,13 +2,31 @@ import { getSiteUrl } from "./site-url";
 
 export default function robots() {
   const siteUrl = getSiteUrl();
+  const aiAgents = [
+    "OAI-SearchBot",
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+  ];
 
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: "/api/",
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: "/api/",
+      },
+      ...aiAgents.map((userAgent) => ({
+        userAgent,
+        allow: "/",
+        disallow: "/api/",
+      })),
+    ],
     ...(siteUrl ? { sitemap: `${siteUrl}/sitemap.xml` } : {}),
   };
 }
