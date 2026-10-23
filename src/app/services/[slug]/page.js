@@ -10,7 +10,6 @@ import { serviceFaqs } from "../../components/page-faqs";
 import { createSeoMetadata } from "../../seo";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { servicePageContent } from "../service-page-content";
-import ServiceExperience from "../ServiceExperience";
 
 export function generateStaticParams() {
   return services.map(({ slug }) => ({ slug }));
@@ -92,7 +91,44 @@ export default async function ServicePage({ params }) {
               <Image src={service.image} alt={service.imageAlt} fill preload sizes="(max-width: 1023px) 100vw, 50vw" className="object-cover" />
             </div>
           </div>
-          <ServiceExperience service={service} sections={longSections} />
+          <section className="mx-auto mt-12 max-w-4xl border-t border-[#29251f]/15 pt-8" aria-labelledby="scope-heading">
+            <h2 id="scope-heading" className="text-2xl font-semibold text-[#29251f]">What to discuss for this service</h2>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {service.details.map((detail, index) => <li key={detail} className="rounded-md border border-[#29251f]/10 bg-white p-5 shadow-[0_8px_24px_rgba(35,31,24,0.05)]">
+                <span className="text-xs font-bold tracking-[0.18em] text-[#c2410c]">{String(index + 1).padStart(2, "0")}</span>
+                <p className="mt-2 text-base leading-7 text-[#69645b]">{detail}</p>
+              </li>)}
+            </ul>
+            {!longSections && <p className="mt-8 text-sm leading-6 text-[#777166]">The recommended materials, preparation, and schedule depend on the property and site assessment. Gurgaon Painters by Home Glazer serves residential and commercial projects across Gurgaon (Gurugram).</p>}
+          </section>
+          {longSections ? (
+            <div className="mx-auto mt-12 max-w-4xl space-y-10 border-t border-[#29251f]/15 pt-8">
+              {longSections.map((section, index) => (
+                <section key={section.heading} aria-labelledby={`service-section-${index}`}>
+                  <h2 id={`service-section-${index}`} className="text-2xl font-semibold text-[#29251f]">{section.heading}</h2>
+                  {section.paragraphs?.map((paragraph) => <p key={paragraph} className="mt-4 text-base leading-7 text-[#69645b]">{paragraph}</p>)}
+                  {section.items && <ul className="mt-4 grid gap-3 sm:grid-cols-2">{section.items.map((item, itemIndex) => <li key={item} className="rounded-md border border-[#29251f]/10 bg-white p-5 shadow-[0_8px_24px_rgba(35,31,24,0.05)]">
+                    <span className="text-xs font-bold tracking-[0.18em] text-[#c2410c]">{String(itemIndex + 1).padStart(2, "0")}</span>
+                    <p className="mt-2 text-base leading-7 text-[#69645b]">{item}</p>
+                  </li>)}</ul>}
+                  {section.steps && <ol className="mt-4 list-decimal space-y-3 pl-6 text-base leading-7 text-[#69645b]">{section.steps.map((step) => <li key={step}>{step}</li>)}</ol>}
+                  {section.closing && <p className="mt-4 text-base leading-7 text-[#69645b]">{section.closing}</p>}
+                </section>
+              ))}
+            </div>
+          ) : (
+          <section className="mx-auto mt-12 max-w-4xl border-t border-[#29251f]/15 pt-8" aria-labelledby="planning-heading">
+            <h2 id="planning-heading" className="text-2xl font-semibold text-[#29251f]">Planning {service.shortTitle.toLowerCase()} in Gurgaon</h2>
+            <div className="mt-5 grid gap-3 md:grid-cols-2">
+              {service.guidance.map(({ title, text }) => (
+                <article key={title} className="rounded-md border border-[#29251f]/10 bg-white p-5 shadow-[0_8px_24px_rgba(35,31,24,0.05)]">
+                  <h3 className="text-lg font-semibold text-[#29251f]">{title}</h3>
+                  <p className="mt-2 text-base leading-7 text-[#69645b]">{text}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+          )}
           <section className="mx-auto mt-12 max-w-4xl rounded-md bg-[#29251f] px-6 py-8 text-center text-white sm:px-10 sm:py-10" aria-labelledby="service-cta-heading">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#f2a17e]">Gurgaon &amp; Gurugram</p>
             <h2 id="service-cta-heading" className="mt-3 text-2xl font-semibold sm:text-3xl">Planning {service.shortTitle.toLowerCase()} for your property?</h2>
