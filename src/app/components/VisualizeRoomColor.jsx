@@ -41,7 +41,7 @@ export default function VisualizeRoomColor() {
       id="visualize-color"
       className="bg-[#f6f6f4] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16"
     >
-      <div className="mx-auto grid max-w-[88rem] items-center gap-7 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+      <div className="mx-auto grid max-w-6xl items-center gap-7 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
         <div className="relative aspect-[5/3] overflow-hidden rounded-md shadow-[0_18px_50px_rgba(41,37,31,0.14)]">
           <RoomColorCanvas
             imageSrc="/images/room-color-visualizer.webp"

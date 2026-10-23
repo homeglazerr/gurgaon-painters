@@ -44,7 +44,7 @@ export default function Hero() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="mx-auto max-w-[1800px]">
+      <div className="mx-auto max-w-6xl">
         <div className="relative overflow-hidden shadow-[0_24px_80px_rgba(11,31,77,0.14)]">
           {/* Slides track */}
           <div
