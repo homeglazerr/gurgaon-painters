@@ -63,7 +63,7 @@ export default function Contact() {
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-md border border-[#e7e2d9] bg-white p-5 sm:p-7 lg:p-8"
+          className="rounded-md border border-[#e7e2d9] bg-transparent p-5 sm:p-7 lg:p-8"
         >
           <div className="grid gap-5 sm:grid-cols-2">
             <label className="text-sm font-medium text-[#514b41]">
