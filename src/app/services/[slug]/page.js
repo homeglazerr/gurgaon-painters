@@ -91,7 +91,7 @@ export default async function ServicePage({ params }) {
               <Image src={service.image} alt={service.imageAlt} fill preload sizes="(max-width: 1023px) 100vw, 50vw" className="object-cover" />
             </div>
           </div>
-          <section className="mx-auto mt-12 max-w-4xl border-t border-[#29251f]/15 pt-8" aria-labelledby="scope-heading">
+          <section className="mx-auto mt-12 max-w-6xl border-t border-[#29251f]/15 pt-8" aria-labelledby="scope-heading">
             <h2 id="scope-heading" className="text-2xl font-semibold text-[#29251f]">What to discuss for this service</h2>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {service.details.map((detail, index) => <li key={detail} className="rounded-md border border-[#29251f]/10 bg-white p-5 shadow-[0_8px_24px_rgba(35,31,24,0.05)]">
@@ -102,7 +102,7 @@ export default async function ServicePage({ params }) {
             {!longSections && <p className="mt-8 text-sm leading-6 text-[#777166]">The recommended materials, preparation, and schedule depend on the property and site assessment. Gurgaon Painters by Home Glazer serves residential and commercial projects across Gurgaon (Gurugram).</p>}
           </section>
           {longSections ? (
-            <div className="mx-auto mt-12 max-w-4xl space-y-10 border-t border-[#29251f]/15 pt-8">
+            <div className="mx-auto mt-12 max-w-6xl space-y-10 border-t border-[#29251f]/15 pt-8">
               {longSections.map((section, index) => (
                 <section key={section.heading} aria-labelledby={`service-section-${index}`}>
                   <h2 id={`service-section-${index}`} className="text-2xl font-semibold text-[#29251f]">{section.heading}</h2>
@@ -117,7 +117,7 @@ export default async function ServicePage({ params }) {
               ))}
             </div>
           ) : (
-          <section className="mx-auto mt-12 max-w-4xl border-t border-[#29251f]/15 pt-8" aria-labelledby="planning-heading">
+          <section className="mx-auto mt-12 max-w-6xl border-t border-[#29251f]/15 pt-8" aria-labelledby="planning-heading">
             <h2 id="planning-heading" className="text-2xl font-semibold text-[#29251f]">Planning {service.shortTitle.toLowerCase()} in Gurgaon</h2>
             <div className="mt-5 grid gap-3 md:grid-cols-2">
               {service.guidance.map(({ title, text }) => (
@@ -129,7 +129,7 @@ export default async function ServicePage({ params }) {
             </div>
           </section>
           )}
-          <section className="mx-auto mt-12 max-w-4xl rounded-md bg-[#29251f] px-6 py-8 text-center text-white sm:px-10 sm:py-10" aria-labelledby="service-cta-heading">
+          <section className="mx-auto mt-12 max-w-6xl rounded-md bg-[#29251f] px-6 py-8 text-center text-white sm:px-10 sm:py-10" aria-labelledby="service-cta-heading">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#f2a17e]">Gurgaon &amp; Gurugram</p>
             <h2 id="service-cta-heading" className="mt-3 text-2xl font-semibold sm:text-3xl">Planning {service.shortTitle.toLowerCase()} for your property?</h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-white/75 sm:text-base">Talk with Home Glazer about your project and arrange a free site visit.</p>
