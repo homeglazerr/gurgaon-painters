@@ -16,6 +16,32 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Admin dashboard
+
+Neon Auth must be enabled on the linked Neon branch. Add these variables to
+`.env.local` before running the app:
+
+```dotenv
+ADMIN_EMAIL=the-email-used-by-your-Neon-Auth-admin-account
+NEON_AUTH_COOKIE_SECRET=generate-a-random-secret-at-least-32-characters-long
+```
+
+Generate a local cookie secret in PowerShell without printing it to the terminal:
+
+```powershell
+$secret = node -e "process.stdout.write(require('crypto').randomBytes(32).toString('base64'))"
+Add-Content .env.local "NEON_AUTH_COOKIE_SECRET=$secret"
+```
+
+Set `ADMIN_EMAIL` in `.env.local` to the exact administrator email address. For
+the first login, enable **Sign-up with Email** and **Verify at Sign-up** under
+Neon Console → Project → Settings → Better Auth. Use verification codes when
+using Neon’s shared email provider. On `/admin/login`, select **First time?
+Create admin account**, choose a password, then verify the code sent to that
+email. Only the configured email can create the admin account or access `/admin`.
+Configure both `ADMIN_EMAIL` and `NEON_AUTH_COOKIE_SECRET` in the production
+host's environment variables as well. Never commit or share the cookie secret.
+
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

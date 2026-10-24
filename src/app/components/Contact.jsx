@@ -1,32 +1,72 @@
 "use client";
 
 import { ArrowUpRight, Phone } from "lucide-react";
-
-const services = [
-  "Interior Painting",
-  "Exterior Painting",
-  "Wall Textures",
-  "Waterproofing",
-  "Wood & Metal Finishes",
-  "Commercial Painting",
-];
+import { useState } from "react";
+import { ENQUIRY_SERVICES } from "@/lib/enquiry-config";
 
 export default function Contact() {
-  function handleSubmit(event) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
+  const [formMessage, setFormMessage] = useState("");
+  const [whatsappUrl, setWhatsappUrl] = useState("");
+
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    const message = [
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const projectMessage = [
       "Hello Gurgaon Painters, I would like to request a painting quote.",
       `Name: ${formData.get("name")}`,
       `Phone: ${formData.get("phone")}`,
       `Service: ${formData.get("service")}`,
       `Project details: ${formData.get("message") || "Not provided"}`,
     ].join("\n");
+    const encodedWhatsappUrl = `https://wa.me/919717256514?text=${encodeURIComponent(projectMessage)}`;
+    const whatsappWindow = window.open("about:blank", "_blank");
+    if (whatsappWindow) {
+      whatsappWindow.opener = null;
+    }
 
-    const whatsappUrl = `https://wa.me/919717256514?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-    event.currentTarget.reset();
+    setIsSubmitting(true);
+    setFormError("");
+    setFormMessage("");
+    setWhatsappUrl("");
+
+    try {
+      const response = await fetch("/api/enquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          phone: formData.get("phone"),
+          service: formData.get("service"),
+          message: formData.get("message"),
+        }),
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "We could not save your enquiry.");
+      }
+
+      form.reset();
+      setFormMessage("Your enquiry has been saved. Continue in WhatsApp to send it.");
+      if (whatsappWindow) {
+        whatsappWindow.location.href = encodedWhatsappUrl;
+      } else {
+        setWhatsappUrl(encodedWhatsappUrl);
+      }
+    } catch (error) {
+      whatsappWindow?.close();
+      setFormError(
+        error instanceof Error
+          ? error.message
+          : "We could not save your enquiry. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   const fieldClassName =
@@ -73,6 +113,8 @@ export default function Contact() {
                 type="text"
                 name="name"
                 autoComplete="name"
+                minLength={2}
+                maxLength={120}
                 placeholder="Enter your name"
                 required
               />
@@ -86,6 +128,7 @@ export default function Contact() {
                 name="phone"
                 autoComplete="tel"
                 inputMode="tel"
+                maxLength={30}
                 placeholder="Enter your phone number"
                 required
               />
@@ -97,7 +140,7 @@ export default function Contact() {
                 <option value="" disabled>
                   Select a service
                 </option>
-                {services.map((service) => (
+                {ENQUIRY_SERVICES.map((service) => (
                   <option key={service} value={service}>
                     {service}
                   </option>
@@ -110,6 +153,7 @@ export default function Contact() {
               <textarea
                 className={`${fieldClassName} min-h-28 resize-y`}
                 name="message"
+                maxLength={2000}
                 placeholder="Property type, area, or anything else we should know"
                 rows={4}
               />
@@ -119,12 +163,37 @@ export default function Contact() {
           <button
             className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-[#c2410c] px-5 text-sm font-bold text-white transition-colors hover:bg-[#9a3412] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2410c] sm:w-auto"
             type="submit"
+            disabled={isSubmitting}
+            aria-disabled={isSubmitting}
           >
-            Send enquiry on WhatsApp <ArrowUpRight size={17} aria-hidden="true" />
+            {isSubmitting ? "Saving enquiry..." : "Send enquiry on WhatsApp"}
+            <ArrowUpRight size={17} aria-hidden="true" />
           </button>
           <p className="mt-3 text-center text-xs leading-5 text-[#817a6e]">
-            WhatsApp will open with your enquiry ready to send. Please review it before sending.
+            Your details are saved so our team can follow up. WhatsApp opens for
+            you to review and send the message.
           </p>
+          {formError && (
+            <p role="alert" className="mt-3 text-sm text-red-700">
+              {formError}
+            </p>
+          )}
+          {formMessage && (
+            <p role="status" className="mt-3 text-sm text-green-800">
+              {formMessage}
+            </p>
+          )}
+          {whatsappUrl && (
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#c2410c] hover:text-[#9a3412]"
+            >
+              Continue to WhatsApp
+              <ArrowUpRight size={15} aria-hidden="true" />
+            </a>
+          )}
         </form>
       </div>
     </section>

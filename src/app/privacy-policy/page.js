@@ -27,12 +27,12 @@ const sections = [
       <>
         <p>
           If you use the enquiry form, you can enter your name, phone number,
-          the painting service you need, and optional project details. The form
-          prepares a message in WhatsApp; it does not submit those details to a
-          form database on this website. WhatsApp opens so you can review the
-          message and choose whether to send it. If you send it, WhatsApp and
-          Home Glazer receive the information in accordance with their
-          respective privacy practices.
+          the painting service you need, and optional project details. When you
+          submit the form, these details are saved in this website&apos;s enquiry
+          database so Home Glazer can respond to your request. WhatsApp opens so
+          you can review the prepared message and choose whether to send it. If
+          you send it, WhatsApp also receives the information in accordance
+          with its privacy practices.
         </p>
         <p>
           If you call us, we receive the phone number and any other details you
